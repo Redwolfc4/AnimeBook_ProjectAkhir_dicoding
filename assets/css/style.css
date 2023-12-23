@@ -1,0 +1,819 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,300&family=IBM+Plex+Sans:wght@500&family=Lato:wght@400;700&family=Nanum+Gothic&family=Playfair+Display:ital,wght@0,400;0,500;1,500&family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&family=Quicksand:wght@500;700&family=Roboto&display=swap');
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url('../img/anime-girl-pink-hair-closed-eyes-gloves-cute-WallpaperMaiden_.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+#profile {
+    cursor: pointer;
+}
+
+
+
+/* modal layout */
+.modal {
+    display: flex;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+#modal-img {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    max-width: 30%;
+    text-align: center;
+}
+
+#caption {
+    color: white;
+    text-align: center;
+    font-size: 100%;
+    margin-top: 1rem;
+}
+
+#modal-img img {
+    width: 100%;
+
+}
+
+#modal-img {
+    animation-name: zoom;
+    animation-duration: .6s;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@-webkit-keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.is-hidden {
+    display: none;
+}
+
+/* Header */
+header.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    gap: 1rem;
+    background-color: transparent;
+    box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.logo h2 {
+    font-size: 1.3rem;
+
+    /** TEXT GRADIENT */
+    color: #4a4af7;
+    background-image: -webkit-linear-gradient(45deg, #4a4af7 15%, #8100a1 71%, #3ab077 42%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.logo hr {
+    align-self: normal;
+    border: none;
+    background-color: aqua;
+    margin-inline: 10px;
+    width: 1px;
+}
+
+/* hamburger menu */
+.togglebar {
+    display: none;
+    gap: .12rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-bars {
+    font-size: xx-large;
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar ul li {
+    cursor: pointer;
+}
+
+.navbar ul li a {
+    color: purple;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.navbar ul li:hover a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 1.41px 1.41px #000000,
+        2px 0 rgb(0, 0, 0),
+        1.41px -1.41px rgb(0, 0, 0),
+        0 -2px rgb(0, 0, 0),
+        -1.41px -1.41px rgb(0, 0, 0),
+        -2px 0 rgb(0, 0, 0),
+        -1.41px 1.41px rgb(0, 0, 0),
+        0 2px rgb(0, 0, 0);
+}
+
+/* end header */
+
+/* main */
+main {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    margin: 3rem;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    width: 100%;
+    align-items: center;
+    gap: 5rem;
+    flex: 1;
+    position: relative;
+    top: 0;
+}
+
+/* form */
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 60%;
+    width: 100%;
+    gap: 1rem;
+    box-shadow: 5px 7px 7px 2px rgba(0, 0, 0, .5), -5px -7px 7px 2px rgba(0, 0, 0, .5);
+    padding: 1.5rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), -1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* input jdl */
+.form .field {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+.field :is(label, input) {
+    transition: all .2s ease-in-out;
+    touch-action: manipulation;
+}
+
+.field input {
+    font-size: 1rem;
+    border: 0;
+    border-bottom: 1px solid blue;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+}
+
+.field input:focus {
+    outline: 0;
+    border-bottom: 2px solid blue;
+    letter-spacing: .05rem;
+}
+
+.field label {
+    text-transform: capitalize;
+    letter-spacing: .05rem;
+}
+
+.field input:placeholder-shown+label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left top;
+    transform: translate(.4em, 1rem) scale(1.1);
+}
+
+.field ::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+
+.field input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+.field :is(input:not(:placeholder-shown), input:focus)+label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+}
+
+/* input rate */
+.rate {
+    display: flex;
+    max-width: 100%;
+}
+
+.rate select {
+    width: 100%;
+    font-size: 1rem;
+    padding: .2rem;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid blue;
+}
+
+.rate select:focus {
+    outline: 0;
+    border-bottom: 2px solid blue;
+}
+
+/* kommentar */
+.form .komentar {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+.komentar :is(label, textarea) {
+    transition: all .2s ease-in-out;
+    touch-action: manipulation;
+}
+
+.komentar textarea {
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    border: 0;
+    border-bottom: 1px solid blue;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+}
+
+.komentar textarea:focus {
+    outline: 0;
+    border-bottom: 2px solid blue;
+    letter-spacing: .05rem;
+}
+
+.komentar label {
+    text-transform: capitalize;
+    letter-spacing: .05rem;
+}
+
+.komentar textarea:placeholder-shown+label {
+    cursor: text;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left top;
+    transform: translate(.4em, 2rem) scale(1.1);
+}
+
+.komentar ::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+
+.komentar textarea:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+.komentar :is(textarea:not(:placeholder-shown), textarea:focus)+label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+}
+
+/* buuton */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+button {
+    max-width: 80px;
+    width: 100%;
+    min-width: 10px;
+    padding-block: .5rem;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+button:first-child {
+    border: 1.5px solid rgb(210, 19, 18);
+    color: rgb(236, 19, 18);
+    transition: all .3s ease-in;
+}
+
+button:first-child:hover {
+    background-color: rgb(210, 19, 18);
+    color: white;
+    transition: all .3s ease-in-out;
+
+}
+
+button:last-child {
+    border: 1.5px solid #151515;
+    color: #151515;
+    transition: all .3s ease-in;
+}
+
+button:last-child:hover {
+    background-color: #151515;
+    color: white;
+    transition: all .3s ease-in-out;
+
+}
+
+/* end form */
+
+/* show fan */
+section.showfanbook {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: auto;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* card */
+.card-fanbook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    max-width: 30%;
+    width: 100%;
+    min-width: 50px;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+header.jdl-anime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: 100%;
+    padding-bottom: .5rem;
+    border-bottom: 4px solid pink;
+
+}
+
+header.jdl-anime img {
+    max-height: 50%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+header.jdl-anime h1 {
+    font-size: 100%;
+    text-align: center;
+}
+
+.show-akun {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 40%;
+    margin-block: 1rem;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-akun img {
+    width: 70%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.show-akun h3 {
+    display: inline;
+    max-width: 100%;
+    font-size: 100%;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.show-akun p {
+    max-width: 100%;
+    font-size: 110%;
+    text-align: center;
+    color: yellow;
+    text-shadow: 0 1px 0 #000, 0 -1px 0 #000, 1px 0 0 #000, -1px 0 0 #000;
+}
+
+.show-comment p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    max-width: 20%;
+    width: 100%;
+    min-width: 10px;
+    gap: 1rem;
+    background-color: white;
+    padding: 1rem;
+    top: 0;
+    position: relative;
+    text-align: justify;
+    height: max-content;
+    border: 1px solid black;
+}
+
+.gambar-about img {
+    width: 100%;
+    border: 1px solid rgb(174, 131, 138);
+}
+
+.about p span {
+    font-weight: 700;
+}
+
+.about .social-media {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-media a {
+    font-size: 2rem;
+}
+
+.fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    /* Also define standard property for compatibility */
+    background-clip: text;
+    color: transparent;
+}
+
+.fa-discord {
+    color: #404eed;
+}
+
+.fa-github {
+    color: black;
+}
+
+/* end main */
+
+/* footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 1rem 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+
+/* end footer */
+
+/* media Query */
+
+@media screen and (max-width: 1024px) {
+    .show-akun h3 {
+        width: 100%;
+        font-size: 80%
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    /* navbar */
+    header.navigation {
+        flex-wrap: wrap;
+    }
+
+    header.navigation.active {
+        padding-bottom: 0;
+    }
+
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    .logo img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar ul.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 0;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: center;
+        padding-block: 1rem;
+    }
+
+    .navbar ul li:first-child {
+        border-bottom: 4px solid black;
+    }
+
+    .navbar ul li:nth-child(2) {
+        border-bottom: 4px solid black;
+    }
+
+    .navbar ul li:last-child {
+        border-top: 4px solid black;
+    }
+
+    .navbar ul li a {
+        color: black;
+        text-shadow: 0 1px 0 #ffffff76, 0 -1px 0 #ffffff76, 1px 0 0 #ffffff76, -1px 0 0 #ffffff76;
+
+    }
+
+    .togglebar {
+        display: flex;
+        cursor: pointer;
+    }
+
+    /* main */
+    main {
+        flex-direction: column-reverse;
+        margin-inline: 1rem;
+    }
+
+    .form {
+        max-width: 70%;
+    }
+
+    .show-akun h3 {
+        font-size: 100%
+    }
+
+    .about {
+        max-width: 66.66%;
+        position: static;
+        margin: auto;
+    }
+
+    article {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 862px) {
+    .show-akun h3 {
+        font-size: 90%
+    }
+
+    #modal-img {
+        max-width: 40%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .show-akun h3 {
+        font-size: 80%
+    }
+}
+
+
+@media (max-width: 720px) {
+    .template {
+        display: none;
+    }
+
+    main {
+        margin-inline: 3rem;
+    }
+
+    .form {
+        max-width: 90%;
+    }
+
+    header.jdl-anime h1 {
+        font-size: 160%;
+    }
+
+    .show-akun {
+        max-width: 20%;
+    }
+
+    .card-fanbook {
+        max-width: 100%;
+    }
+
+    .about {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        margin-inline: 2rem;
+    }
+
+    .form {
+        max-width: 100%
+    }
+
+    .show-akun {
+        max-width: 30%;
+    }
+
+    header.jdl-anime h1 {
+        font-size: 140%;
+    }
+
+    .form {
+        max-width: 100%;
+    }
+
+    .about {
+        max-width: 100%;
+    }
+
+    #modal-img {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo h2 {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .fa-bars {
+        font-size: x-large;
+    }
+
+    main {
+        margin-inline: 1rem;
+    }
+
+    .form {
+        padding: .8rem;
+    }
+
+    header.jdl-anime h1 {
+        font-size: 100%;
+    }
+
+    .show-akun {
+        max-width: 30%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #modal-img {
+        max-width: 60%;
+    }
+
+    .container {
+        gap: .5rem;
+    }
+
+    header.jdl-anime h1 {
+        font-size: 80%;
+    }
+
+    button {
+        border-radius: 20px;
+    }
+
+    .show-akun {
+        max-width: 40%
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeBook Project</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,300&family=IBM+Plex+Sans:wght@500&family=Lato:wght@400;700&family=Nanum+Gothic&family=Playfair+Display:ital,wght@0,400;0,500;1,500&family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&family=Quicksand:wght@500;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mysql@2.18.1/index.min.js"></script>
+    <script src="./assets/JS/script.js"></script>
+</head>
+
+<body>
+    <header class="navigation">
+        <section class="logo">
+            <img onclick="showModal()" id="profile" src="assets/img/star_2b50.png" alt="Profile Account.jpg">
+            <hr>
+            <h2>Kholik</h2>
+        </section>
+        <section class="togglebar">
+            <i class="fa-solid fa-bars"></i>
+        </section>
+        <nav class="navbar">
+            <ul>
+                <li class="home"><a>Home</a></li>
+                <li class="tentang"><a>About</a></li>
+                <li class="kontak"><a>Contact</a></li>
+                <li class="keluar"><a>Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="about">
+            <section class="gambar-about">
+                <img src="assets/img/anime-girl-pink-hair-closed-eyes-gloves-cute-WallpaperMaiden_.png"
+                    alt="About Project.img">
+            </section>
+            <p>
+                <span>AnimeBook</span> adalah sebuah situs para wibu
+                sekalian
+                guna memberikan ekspresi seperti komentar kalian tentang
+                berbagai genre anime
+            </p>
+            <p>Laporkan Link Rusak Melalui :</p>
+            <section class="social-media">
+                <a href="https://www.instagram.com/kholikcipuden/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/Redwolfc4"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.com/users/606077937321508884"><i class="fa-brands fa-discord"></i></a>
+            </section>
+        </aside>
+        <article>
+            <section class="form">
+                <section class="field">
+                    <input type="text" name="jdlanime" id="jdlanime" autocomplete="on"
+                        placeholder="Berikan Judul Animenya">
+                    <label class="jdlanime" for="jdlanime"> Judul Anime</label>
+                </section>
+                <section class="rate">
+                    <select name="rate" id="rate">
+                        <option value="" selected disabled hidden>Rating</option>
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </section>
+
+                <section class="komentar">
+                    <textarea name="comment" id="comment" placeholder="Berikan Komentarmu"></textarea>
+                    <label for="comment" class="comment">Comment</label>
+                </section>
+
+                <section class="container">
+                    <button type="reset" onclick="toggle_reset()">Reset</button>
+                    <button type="submit" onclick="toggle_kirim()">Kirim</button>
+                </section>
+
+            </section>
+
+            <section class="template">
+                <p style="font-weight: 700; font-size: 3rem;">Template Show Cards</p>
+            </section>
+
+            <section class="showfanbook" id="showfanbook">
+                <section class="card-fanbook">
+                    <header class="jdl-anime">
+                        <img src="https://media.kitsu.io/anime/poster_images/13842/medium.jpg" alt="gambar-anime.png" />
+                        <h1>Da Wei Bei Ken Zhi Daomei Tegong Xiong</h1>
+                    </header>
+                    <section class="show-akun">
+                        <img src="assets/img/profile-2023-10-15-18-06-10.jpg" id="profile" onclick="showModalProfile(1)"
+                            alt="profile.jpg">
+                        <h3 id="nickname1">Jordan</h3>
+                        <p>★★★★★</p>
+                    </section>
+                    <section class="show-comment">
+                        <p>Comedinya terasa dan cocok untuk ditonton</p>
+                    </section>
+                </section>
+                <section class="card-fanbook">
+                    <header class="jdl-anime">
+                        <img src="https://media.kitsu.io/anime/poster_images/7880/medium.jpg" alt="gambar-anime.png" />
+                        <h1>No Game No Life</h1>
+                    </header>
+                    <section class="show-akun">
+                        <img src="assets/img/profile-2023-10-15-18-06-10.jpg" id="profile" onclick="showModalProfile(2)"
+                            alt="profile.jpg">
+
+                        <h3 id="nickname2">Diana</h3>
+                        <p>★★★★★</p>
+                    </section>
+                    <section class="show-comment">
+                        <p>Adik Kakak OP banget dan anime ini juga bisa digunakan untuk belajar</p>
+                    </section>
+                </section>
+                <section class="card-fanbook">
+                    <header class="jdl-anime">
+                        <img src="https://media.kitsu.io/anime/42530/poster_image/medium-1911eec6e39e3eb8ebbdf0453cb7d5cd.jpeg"
+                            alt="gambar-anime.png" />
+                        <h1>Tate no Yuusha no Nariagari Season 2</h1>
+                    </header>
+                    <section class="show-akun">
+                        <img src="assets/img/unnamed.jpg" id="profile" onclick="showModalProfile(3)" alt="profile.jpg">
+                        <h3 id="nickname3">Williams</h3>
+                        <p>★★★★★</p>
+                    </section>
+                    <section class="show-comment">
+                        <p>naofurry, raphtalia, loli unggas, dan kawan kawan dalam berpetualang</p>
+                    </section>
+                </section>
+            </section>
+
+        </article>
+    </main>
+    <footer>
+        <section class="modal is-hidden" id="modal-layout">
+            <span onclick="showModal()" class="close">&times;</span>
+            <section id="modal-img">
+                <img src="./assets/img/profile-2023-10-15-18-06-10.jpg" alt="Zoom Profile">
+                <section id="caption">myimage</section>
+            </section>
+        </section>
+        <p>Copyright &copy; 2023 - AnimeBook Project</p>
+    </footer>
+</body>
+
+</html>
